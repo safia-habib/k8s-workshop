@@ -24,7 +24,7 @@ kubectl get namespace
 1. In your Dynatrace Environment go to Kubernetes app
 2. Select Add Cluster
 3. Select AKS in the Distributions list , Generate the tokens and download the dynakube.yaml file and make it available on the Azure Cloud shell
-[Installing the operator](images/Ex2-Install-Operator-Commands.png)
+![Installing the operator](images/Ex2-Install-Operator-Commands.png)
 
 4. Run the Operator install, read more about what is installed [here]()
 ``````
@@ -38,24 +38,24 @@ helm install dynatrace-operator oci://public.ecr.aws/dynatrace/dynatrace-operato
 ``````
 kubectl apply -f dynakube.yaml
 ``````
-[Applying Dynakube](images/Ex2-Apply-Dynakube.png)
+![Applying Dynakube](images/Ex2-Apply-Dynakube.png)
 
 ## Exercise 2a: Observe the Dynatrace components installed in K8s through the operator: 
 
 ``````
 kubectl get pods -n dynatrace
 ```````
-[Dynatrace Deployed Pods](images/Ex2-Dynatrace-Deployed-Pods.png)
+![Dynatrace Deployed Pods](images/Ex2-Dynatrace-Deployed-Pods.png)
 
 ``````
 kubectl logs --tail=20 <podname> -n dynatrace
 ``````
-[Dynatrace Operator logs](images/Ex2a-Dynatrace-Operator-Logs.png)
-[Dynatrace Activegate Logs](images/Ex2a-Dynatrace-ActiveGate-logs.png)
+![Dynatrace Operator logs](images/Ex2a-Dynatrace-Operator-Logs.png)
+![Dynatrace Activegate Logs](images/Ex2a-Dynatrace-ActiveGate-logs.png)
 
 ## Installing Fluent Bit and shipping logs to Dynatrace 
 From the Dynatrace installation wizard generate the Fluent bit values file (used for enrichment of the logs to the cluster)
-[Dynatrace Installation overview for Fluent Bit](images/Dynatrace-Install-Fluent-Bit.png)
+![Dynatrace Installation overview for Fluent Bit](images/Dynatrace-Install-Fluent-Bit.png)
 
 1. Add Fluent Bit Helm chart
 
@@ -68,7 +68,7 @@ helm repo add fluent https://fluent.github.io/helm-charts
 ``````
 helm repo update
 ``````
-[Adding the Fluent Bit Helm chart](images/Fluent-Bit-Helm-Chart.png)
+![Adding the Fluent Bit Helm chart](images/Fluent-Bit-Helm-Chart.png)
 3. Install Fluent bit with the values file that you obtain from the Dynatrace Kubernetes Install wizard: 
 
 ``````
@@ -76,14 +76,14 @@ helm install fluent-bit fluent/fluent-bit -f fluent-bit-values.yaml `
 --create-namespace `
 --namespace dynatrace-fluent-bit
 ``````
-[Install Fluent Bit Helm chart](images/Installing-Fluent-Bit-Helm-Chart.png)
+![Install Fluent Bit Helm chart](images/Installing-Fluent-Bit-Helm-Chart.png)
 4. Check the logs of Fluent bit pods: 
 
 ``````
 kubectl get pods -n dynatrace-fluent-bit
 kubectl logs --tail=20 <podname> -n dynatrace-fluent-bit
 ``````
-[Check Fluent Bit pods, logs](images/Check-FluentBit-Pods-logs.png)
+![Check Fluent Bit pods, logs](images/Check-FluentBit-Pods-logs.png)
 
 ## Ingest Prometheus metrics into Dynatrace
 Run the following commands on your Kubernetes cluster:
