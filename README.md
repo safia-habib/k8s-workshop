@@ -53,7 +53,7 @@ kubectl logs --tail=20 <podname> -n dynatrace
 ![Dynatrace Operator logs](images/Ex2a-Dynatrace-Operator-Logs.png)
 ![Dynatrace Activegate Logs](images/Ex2a-Dynatrace-ActiveGate-logs.png)
 
-## Installing Fluent Bit and shipping logs to Dynatrace 
+## Exercise 3: Installing Fluent Bit and shipping logs to Dynatrace 
 From the Dynatrace installation wizard generate the Fluent bit values file (used for enrichment of the logs to the cluster)
 ![Dynatrace Installation overview for Fluent Bit](images/Dynatrace-Install-Fluent-Bit.png)
 
@@ -85,7 +85,7 @@ kubectl logs --tail=20 <podname> -n dynatrace-fluent-bit
 ``````
 ![Check Fluent Bit pods, logs](images/Check-FluentBit-Pods-logs.png)
 
-## Ingest Prometheus metrics into Dynatrace
+## Exercise 4: Ingest Prometheus metrics into Dynatrace
 Run the following commands on your Kubernetes cluster:
 
 1. Create an API token with Ingest metrics permissions within Dynatrace tenant and replace the values of tenant and API Token: 
@@ -120,6 +120,6 @@ helm repo update
 ```
 
 
-## Adding Istio and Envoy
+## Exercise 5: Adding Istio and Envoy
 
 
