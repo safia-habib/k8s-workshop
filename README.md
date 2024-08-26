@@ -122,4 +122,6 @@ helm repo update
 
 ## Exercise 5: Adding Istio and Envoy
 
+## Exercise 6: Deploying applications on the K8s Cluster
+
 
