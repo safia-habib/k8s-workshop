@@ -1,9 +1,27 @@
 # Getting started with Dynatrace on K8s
 
-## Installing Dynatrace Operator 
+## Exercise 1: Create a K8s cluster in Azure
+1. Go to Azure Portal and search for Kubernetes services here ()
+2. Create a new Kubernetes service by providing all the details:
+
+3. Connect to the Kubernetes cluster once it is created. Open the Cloud shell and run the commands to connect to the cluster
+
+4. Once connected to the cluster run the following commands to aqauint with K8s components:
+
+View the nodes in the K8s cluster
+``````
+kubectl get nodes
+``````
+
+View the namespaces in the K8s Cluster: 
+``````
+kubectl get namespace
+``````
+
+## Exercise 2: Installing Dynatrace Operator 
 * Create the K8s cluster in Azure Kubernetes Service
 
-Commands to run to get acquainted with K8s: 
+## Exercise 2a: Observe the Dynatrace components installed in K8s through the operator: 
 
 ``````
 kubectl get pods -n dynatrace
