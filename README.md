@@ -122,6 +122,8 @@ helm repo update
 
 ## Exercise 5: Adding Istio and Envoy
 
-## Exercise 6: Deploying applications on the K8s Cluster
+## Exercise 6: Ingest statsD metrics from Otel collector
+
+## Exercise 7: Deploying applications on the K8s Cluster
 
 
